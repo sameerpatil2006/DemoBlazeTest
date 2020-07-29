@@ -27,10 +27,10 @@ public class ExtentReporterNG extends TestListenerAdapter
     public void onStart(ITestContext testContext)
     {
         Date now = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd.yy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd.yy-hh:mm");
         String date = dateFormat.format(now);
         htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+ "/test-output/"+date+"/ExtentReport.html");//specify location of the report
-        htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
+        //htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
 
         extent=new ExtentReports();
 

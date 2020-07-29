@@ -5,7 +5,7 @@
         <listener class-name="com.demoblaze.utility.ExtentReporterNG" />
     </listeners>
 
-    <test name="Add Sheet Test">
+    <test name="Home Test">
     <classes>
         <class name="com.demoblaze.HomeTest"/>
     </classes>

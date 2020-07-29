@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+        if (System.getProperty("ip") != null){
+            systemProperty 'ip', System.getProperty('ip')
+        }
+        testLogging.showStandardStreams = true
+        suites "src/test/suites/testNG.xml"
+    }
+}
+
+group 'DemoBlazeTest'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'com.aventstack', name: 'extentreports', version: '4.0.9'
+}
